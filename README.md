@@ -1,1 +1,1 @@
-#Various statistic algorithms
+Implementation of various statistics algorithms.
