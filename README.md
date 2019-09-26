@@ -1,1 +1,1 @@
-# StatisticalPatternRecognition
+#Various statistic algorithms
