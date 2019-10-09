@@ -1,1 +1,3 @@
-Implementation of various statistics algorithms.
+# Implementation of various statistics algorithms:
+- Whitening transformation
+- Bayes classifier (QDA)
