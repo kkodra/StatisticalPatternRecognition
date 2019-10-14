@@ -1,4 +1,5 @@
-# Bayes classifier design
+# Bayes classifier design: Quadratic Discriminant Analysis (QDA) example
+# Linear Dicriminant Analysis (LDA) if covariances are the same i.e. set Sigma1 = Sigma2
 
 # Set dimension and number of samples
 d <-2
