@@ -8,8 +8,8 @@ M1 <-rbind(0,0)
 M2 <-rbind(0,0)
 
 # Define covariance matrices
-Sigma1 <-matrix(c(1,0.5,0.5,1),nrow=2,ncol=2)
-Sigma2 <-matrix(c(1,-0.5,-0.5,1),nrow=2,ncol=2)
+Sigma1 <-matrix(c(1,0.5,0.5,1),nrow=d,ncol=d)
+Sigma2 <-matrix(c(1,-0.5,-0.5,1),nrow=d,ncol=d)
 
 # Prior probabilites
 P1 = 0.5
@@ -28,8 +28,8 @@ vectors2 <- e2$vectors
 Phi1 = vectors1
 Phi2 = vectors2
 
-Lambda1 <-matrix(c(values1[1],0,0,values1[2]),nrow=2,ncol=2)
-Lambda2 <-matrix(c(values2[1],0,0,values2[2]),nrow=2,ncol=2)
+Lambda1 <-matrix(c(values1[1],0,0,values1[2]),nrowd=d,ncol=d)
+Lambda2 <-matrix(c(values2[1],0,0,values2[2]),nrow=d,ncol=d)
 
 Y1 <-replicate(2, rnorm(N,0,1))
 Y2 <-replicate(2, rnorm(N,0,1))
@@ -53,8 +53,8 @@ legend(-3,3,legend=c("Sample 1", "Sample 2"),
 
 ###### 2. Design Bayes classified for minimum error #####
 # Refer to (3.11) in the book
-M1_rep <- matrix(0,2,N)
-M2_rep <- matrix(0,2,N)
+M1_rep <- matrix(0,d,N)
+M2_rep <- matrix(0,d,N)
 
 h1 <- 0.5*t(X1-M1_rep) %*% solve(Sigma1) %*% (X1-M1_rep) - 0.5*t(X1-M2_rep) %*% solve(Sigma2) %*% (X1-M2_rep) + 0.5*log(det(Sigma1)/det(Sigma2))
 h2 <- 0.5*t(X2-M2_rep) %*% solve(Sigma1) %*% (X2-M1_rep) - 0.5*t(X2-M1_rep) %*% solve(Sigma2) %*% (X2-M1_rep) + 0.5*log(det(Sigma1)/det(Sigma2))
