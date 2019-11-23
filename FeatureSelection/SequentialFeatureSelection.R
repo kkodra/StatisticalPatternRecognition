@@ -1,7 +1,6 @@
 # Sequential feature selection
 # Work in progress ...
 
-
 # Class 1 mean
 f_C1_m <- 1; 
 
