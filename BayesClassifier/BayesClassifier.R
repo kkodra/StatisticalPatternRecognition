@@ -2,22 +2,22 @@
 # Linear Dicriminant Analysis (LDA) if covariances are the same i.e. set Sigma1 = Sigma2
 
 # Set dimension and number of samples
-d <-2
-N <-10000
-M1 <-rbind(0,0)
-M2 <-rbind(0,0)
+d <- 2
+N <- 10000
+M1 <- rbind(0,0)
+M2 <- rbind(0,0)
 
 # Define covariance matrices
-Sigma1 <-matrix(c(1,0.5,0.5,1),nrow=d,ncol=d)
-Sigma2 <-matrix(c(1,-0.5,-0.5,1),nrow=d,ncol=d)
+Sigma1 <- matrix(c(1,0.5,0.5,1),nrow=d,ncol=d)
+Sigma2 <- matrix(c(1,-0.5,-0.5,1),nrow=d,ncol=d)
 
 # Prior probabilites
-P1 = 0.5
-P2 = 0.5
+P1 <- 0.5
+P2 <- 0.5
 
 ###### 1. Generate N samples from each class #####
 # Calculate eigenvectors and eigenvalues
-e1<-eigen(Sigma1,symmetric = TRUE)
+e1 <- eigen(Sigma1,symmetric = TRUE)
 values1 <- e1$values
 vectors1 <- e1$vectors
 
@@ -25,14 +25,14 @@ e2<-eigen(Sigma2,symmetric = TRUE)
 values2 <- e2$values
 vectors2 <- e2$vectors
 
-Phi1 = vectors1
-Phi2 = vectors2
+Phi1 <- vectors1
+Phi2 <- vectors2
 
-Lambda1 <-matrix(c(values1[1],0,0,values1[2]),nrowd=d,ncol=d)
-Lambda2 <-matrix(c(values2[1],0,0,values2[2]),nrow=d,ncol=d)
+Lambda1 <- matrix(c(values1[1],0,0,values1[2]),nrowd=d,ncol=d)
+Lambda2 <- matrix(c(values2[1],0,0,values2[2]),nrow=d,ncol=d)
 
-Y1 <-replicate(2, rnorm(N,0,1))
-Y2 <-replicate(2, rnorm(N,0,1))
+Y1 <- replicate(2, rnorm(N,0,1))
+Y2 <- replicate(2, rnorm(N,0,1))
 
 X1 <- Phi1 %*% sqrt(Lambda1) %*% t(Y1)
 X2 <- Phi2 %*% sqrt(Lambda2) %*% t(Y2)
