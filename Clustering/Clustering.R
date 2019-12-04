@@ -1,5 +1,7 @@
 # Clustering of nutrient data
-setwd("C:/Users/kodrak1/Desktop/Strategic ED Classes/StatisticalPatternRecognition")
+
+# Set directory first.
+# setwd("C:/Users/...")
 
 library(ggplot2)
 library(cluster)
