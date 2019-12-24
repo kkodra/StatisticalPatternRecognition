@@ -1,17 +1,17 @@
 # Implementation of the Whitening transformation
-# Set parameters: dim -> d, samples -> N, center -> M
-d <-2
-N <-10000
-M <-rbind(1,2)
-Sigma <-matrix(c(4,4,4,9),nrow=2,ncol=2)
+# Set parameters: dimension -> d, number of samples -> N, center -> M
+d <- 2
+N <- 10000
+M <- rbind(1,2)
+Sigma <- matrix(c(4,4,4,9),nrow=2,ncol=2)
 
 # Calculate eigenvectors and eigenvalues
-e<-eigen(Sigma,symmetric = TRUE)
+e <- eigen(Sigma,symmetric = TRUE)
 values <- e$values
 vectors <- e$vectors
 
-Phi = vectors
-Lambda<-matrix(c(values[1],0,0,values[2]),nrow=2,ncol=2)
+Phi <- vectors
+Lambda <- matrix(c(values[1],0,0,values[2]),nrow=2,ncol=2)
 
 # Check that Sigma_Y is identity
 Lambda_sqrt_inv <- solve(sqrt(Lambda))
