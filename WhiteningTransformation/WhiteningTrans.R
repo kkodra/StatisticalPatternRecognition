@@ -25,7 +25,7 @@ X2 <- X[2,1:N] + M[2]
 plot(X1,X2)
 
 # Whitened distribution
-Yw = Lambda_sqrt_inv %*% t(Phi) %*% X
+Yw <- Lambda_sqrt_inv %*% t(Phi) %*% X
 
 Y1 <- Yw[1,1:N] + M[1]
 Y2 <- Yw[2,1:N] + M[2]
