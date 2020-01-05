@@ -1,4 +1,5 @@
 # Clustering of nutrient data
+# Nutrient data provided. Also available from R libraries
 
 # Set directory first.
 # setwd("C:/Users/...")
