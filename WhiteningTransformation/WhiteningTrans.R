@@ -17,7 +17,7 @@ Lambda <- matrix(c(values[1],0,0,values[2]),nrow=2,ncol=2)
 Lambda_sqrt_inv <- solve(sqrt(Lambda))
 Sigma_Y <- Lambda_sqrt_inv %*% t(Phi) %*% Sigma %*% Phi %*% Lambda_sqrt_inv
 
-Y<-replicate(2, rnorm(N,0,1))
+Y <- replicate(2, rnorm(N,0,1))
 X <- Phi %*% sqrt(Lambda) %*% t(Y)
 
 X1 <- X[1,1:N] + M[1]
